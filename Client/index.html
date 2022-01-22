@@ -1,0 +1,185 @@
+<html>
+<head>
+    <title>stART exhibition</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <link rel="stylesheet" href="./style/login.css">
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+
+
+<body>
+    
+    <!-- CONNECT PAGE -->
+    <div class="connect-screen">
+        <p>Trying to connect...</p>
+    </div>
+    
+    <!-- LOGIN PAGE -->
+    <div class="login-screen">
+        
+        <div class="start-form">
+            <h1 id="header">Login</h1>
+            
+            <div class="login-fields">
+                
+                <div class="login">
+                    <p id="p-username">Username</p>
+                    <input type="text" id="username-input">
+                    <p id="p-password">Password</p>
+                    <input type="password" id="password-input">
+                    
+                    <p id="login-failed">Placeholder</p>
+                    <button id="login-button">Login</button>
+                </div>
+                
+                <div class="register">
+                    <p>1. Choose Username</p>
+                    <input type="text" id="choose-username-input">
+                    <p>2. Choose Password</p>
+                    <input type="password" id="choose-password-input">
+                    <p>3. Repeat Password</p>
+                    <input type="password" id="repeat-password-input">
+                    
+                    <p id="register-failed">Placeholder</p>
+                    <button id="register-button">Register</button>
+                </div>      
+            </div>
+            <hr>
+            <span>or </span>
+            <span id="login-register-link">Register</span>
+        </div>
+    </div>
+    
+    <!-- MAIN PAGE -->
+    <div class="virtual-world">
+
+        <div class="canvas-window">
+            <canvas id="the-world">
+                
+            </canvas>
+        </div>
+        
+        <!-- MENU -->
+        <div class="menu">
+            <button id="general-button">&#x1F4EA General <span class="new-msg-sign"> &#x1F534</span></button>
+            <!-- other msg: &#x2709, plane: &#x2708-->
+            <button id="friends-button">&#x1F46B Friends <span class="new-msg-sign"> &#x1F534</span></button>
+            
+            <button id="look-button">&#x1F466&#x1F467 Look</button>
+            
+            <button id="settings-button">&#x1F527 Settings</button>
+            
+            <button id="logout-button">&#x1F680 Logout</button>
+        </div>
+        
+        <!-- GENERAL CHAT -->
+        <div class="general-chat">
+            <div class="messages">
+
+            </div>
+
+            <div class="send">
+                <input id="msg-input-general" type="text" placeholder="Type here...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        
+        <!-- FRIENDS -->
+        <div class="friends">
+            
+            <div class="friends-list">
+                
+                <div class="friends-entries">
+
+                </div>
+                
+                <div class="hide-n-show">
+                    <button id="hide-friends-list-btn">Hide</button>
+                </div>
+            </div>
+            
+            <div class="friends-chat">
+                <div class="messages-selected" id="placeholder">
+                    
+                </div>
+                <div class="send">
+                    <input id="msg-input" type="text" placeholder="Type here...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SHOP -->
+        <div class="look">
+            <p><b>Change your look...</b></p>
+            <button class="look-button" id="look-back-button">&#x23EA Back</button>
+            <button class="look-button" id="look-save-button">&#x1f4be Save</button>
+            <button class="look-button" id="look-next-button">Next &#x23E9</button>
+        </div>
+        
+        <!-- SETTINGS -->
+        <div class="settings">
+            <h2>Change password</h2>
+            <p>Old password</p>
+            <input type="password" id="settings-old-pw">
+            <p>New password</p>
+            <input type="password" id="settings-new-pw">
+            <p>Repeat new password</p>
+            <input type="password" id="settings-new-pw-repeat">
+            
+            <p id="pw-change-failed">Placeholder</p>
+            <button id="change-pw-button">Change password</button>
+        </div>
+
+        <div class="art-info">
+            <h2 id="art-header">empty header</h2>
+            <p id="art-text">empty text</p>
+        </div>
+
+        <div class="upload-img">
+            <h2 id="upload-header">Upload your art here...</h2>
+            <hr>
+            <input id="fileupload" name="fileupload" type="file" />
+            <hr>
+            <p>Image ratio must be 4:5 and size has to be 400x500 pixels.</p>
+            <canvas id="upload-canvas">
+
+            </canvas>
+        </div>
+    </div>
+    
+
+    <div id="templates" style="display: none">
+        <div class="message">
+            <span id="username"></span>
+            <span id="content"></span>
+            <span id="time"></span>
+        </div>
+        <button class="friends-entry"><span class="name"></span><span class="new-msg-sign"> &#x1F534</span></button>
+        <div class="messages">
+        </div>
+        <canvas class="sample-canvas">
+            
+        </canvas>
+    </div>
+    
+    <script src="libs/gl-matrix-min.js"></script>
+    <script src="libs/wbin.js"></script>
+    <script src="libs/walkArea.js"></script>
+    <script src="libs/litegl.js"></script>
+    <script src="libs/rendeer.js"></script>
+    <script src="libs/md5.min.js"></script>
+   
+    <script src="scripts/loadDOM.js"></script>
+    <script src="scripts/loadWorld.js"></script>
+    <script src="scripts/Character.js"></script>
+
+    <script src="scripts/server.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/virtual-world.js"></script>
+    <script src="scripts/openInfo.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/chat.js"></script>
+    
+</body>
+</html>

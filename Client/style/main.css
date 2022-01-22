@@ -1,0 +1,466 @@
+.virtual-world {
+    min-width: 500px;
+    min-height: 400px;
+    
+    display: none;
+}
+
+.canvas-window {
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    min-width: 400px;
+    min-height: 450px;
+    
+    height: 100%;
+    
+    margin: 5px;
+}
+
+#the-world {
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 10px;
+}
+
+/* MESSAGE STUFF */
+.message {
+    border-radius: 10px;
+    padding: 8px;
+    margin: 5px;
+    height: auto;
+    
+    display: table;
+}
+
+.message#me {    
+    margin-left: auto;
+    background-color: rgb(179, 226, 221);
+    /*rgb(245, 245, 245);*/
+}
+.message#other {
+    text-align: left;
+    background-color: rgb(191, 213, 232);
+}
+
+span#content {
+    font: 12px 'Quicksand';
+}
+span#username {
+    font: 10px 'Quicksand';
+    font-weight: bold;
+}
+#other span#username {
+    color: rgb(120, 120, 120);
+}
+#me span#username {
+    color: rgb(220, 220, 220);
+    display: table;
+    margin-left: auto;
+}
+
+span#time {
+    font: 8px 'Quicksand';
+    display: table;
+    margin-left: auto;
+}
+#other span#time {
+    color: rgb(120, 120, 120);   
+}
+#me span#time {
+    color: rgb(120, 120, 120);
+}
+
+span#content {
+    display: table;
+}
+
+.new-msg-sign {
+    font-size: 10px;
+    display: none;
+}
+
+/* MENU */
+.menu {
+    position: absolute;
+    display: flex;
+    top: 15px;
+    left: 20px;
+    width: 90%;
+}
+
+.menu button {
+    width: 110px;
+    padding: 5px;
+    background-color: rgba(245, 245, 245, 1);
+    margin-right: 5px;
+}
+
+/* ART INFO */
+.art-info {
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    padding: 5px;
+    
+    width: 350px;
+    height: auto;
+    max-height: 400;
+
+    overflow: auto;
+    
+    background-color: rgba(245, 245, 245, 0.9);
+    
+    display: none;
+}
+
+#art-header {
+    margin: 10px;
+}
+
+#art-text {
+    font: 14px 'Quicksand';
+    margin: 2px;
+}
+
+/* UPLOAD */
+.upload-img {
+    position: absolute;
+    left: 20px;
+    top: 150px;
+    
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    padding: 5px;
+    
+    width: 350px;
+    max-height: 400px;
+    height: auto;
+
+    overflow: auto;
+    
+    background-color: rgba(245, 245, 245, 0.9);
+    
+    text-align: center;
+
+    display: none;
+}
+
+#fileupload {
+    border: none;
+}
+
+.upload-img p {
+    font: 14px 'Quicksand';
+    margin: 2px;
+}
+
+/* GENERAL CHAT */
+.general-chat {
+    display: grid;
+    
+    grid-template-rows: auto auto;
+    
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    padding: 5px;
+    
+    width: 400px;
+    height: 250px;
+    
+    background-color: rgba(245, 245, 245, 0.5);
+    
+    display: none;
+}
+
+.general-chat .messages {
+    grid-row: 1;
+    height: 84%;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.general-chat .send {
+    grid-row: 2;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    grid-gap: 0;
+    height: auto;
+}
+.general-chat #msg-input-general {
+    width: 84%;
+    margin-right: auto;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+.general-chat #send-button {
+    width: 15%;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+.general-chat #send-button:hover {
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.general-chat #other.message #username:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* FRIENDS */
+.friends {
+    display: grid;
+    
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 84% auto;
+    
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    padding: 5px;
+    
+    width: 500px;
+    height: 250px;
+    
+    background-color: rgba(245, 245, 245, 0.5);
+    
+    display: none;
+}
+
+.friends-list {
+    grid-column: 1;
+    float: left;
+    
+    height: 100%;
+    
+    margin-right: 5px;
+    
+    width: 150px;
+    
+    text-align: center;
+    
+    border-radius: 10px;
+}
+
+.friends-entries {
+    grid-row: 1;
+    margin-bottom: 10px;
+    overflow: auto;
+    height: 84%;
+    min-height: 84%;
+}
+
+.friends-entry {
+    width: 96%;
+    height: 30px;
+    font: 14px 'Quicksand';
+    font-weight: bold;
+    text-align: center;
+    background-color: #a26464;
+    border-radius: 10px;
+    border: 2px black solid;
+    padding-top: 4px;
+    margin: 1px;
+}
+
+.friends-entry-selected {
+    background-color: "background-color: rgba(245, 245, 245, 0.5);";
+    width: 96%;
+    height: 30px;
+    font: 14px 'Quicksand';
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px black solid;
+    padding-top: 4px;
+    margin: 1px;
+}
+
+.friends-entry:hover {
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+.hide-n-show {
+    grid-row: 2;
+    padding: 0;
+    margin: 0;
+    grid-gap: 0;
+    height: auto;
+}
+
+#hide-friends-list-btn {
+    width: 100%;
+    background-color: rgba(245, 245, 245, 0.8);
+    padding: 4px;
+}
+
+#hide-friends-list-btn:hover {
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.friends-chat {
+    grid-column: 2;
+    height: 100%;
+    display: none;
+}
+
+.friends-chat .messages {    
+    grid-row: 1;
+    margin-bottom: 10px;
+    overflow: auto;
+    height: 84%;
+    display: none;
+}
+.friends-chat .messages-selected {    
+    grid-row: 1;
+    margin-bottom: 10px;
+    overflow: auto;
+    height: 84%;
+}
+
+.friends-chat .send {
+    grid-row: 2;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    grid-gap: 0;
+    height: auto;
+}
+
+.friends-chat #msg-input {
+    width: 84%;
+    margin-right: auto;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+.friends-chat #send-button {
+    width: 15%;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+.friends-chat #send-button:hover {
+    background-color: rgba(245, 245, 245, 1);
+}
+
+/* look */
+.look {
+    display: table;
+        
+    position: absolute;
+    left: 145px;
+    top: 50px;
+    
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    padding: 5px;
+    
+    width: 300px;
+    height: auto;
+    
+    background-color: rgba(245, 245, 245, 0.5);
+    overflow: auto;
+    
+    text-align: center;
+
+    font: 14px 'Quicksand';
+    padding: 10px;
+    display: none;
+}
+
+.look p {
+    padding-bottom: 10px;
+}
+
+.look-button {
+    width: 80px;
+    padding: 5px;
+    background-color: rgba(245, 245, 245, 1);
+    margin-right: 5px;
+}
+
+.look-button:hover {
+    background-color: rgba(125, 125, 125, 1);
+}
+
+/* settings */
+.settings {
+    display: grid;
+    
+    grid-template-rows: 1fr auto;
+    
+    position: absolute;
+    left: 300px;
+    top: 50px;
+    
+    border-radius: 10px;
+    border: 2px black solid;
+    
+    padding: 5px;
+    
+    width: 235px;
+    height: auto;
+    
+    background-color: rgba(245, 245, 245, 0.5);
+    overflow: auto;
+    
+    display: none;
+
+    text-align: center;
+}
+.settings input {
+    font: 20px 'Quicksand';
+    width: 90%;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    outline: none;
+    text-align: center;
+    padding: 2px;
+}
+
+.settings p {
+    font: 14px 'Quicksand';
+}
+
+.settings h2 {
+    padding: 10px;
+}
+
+#change-pw-button {
+    width: auto;
+    padding: 5px;
+    background-color: rgba(245, 245, 245, 1);
+    margin-bottom: 10px;
+}
+
+#change-pw-button:hover {
+    background-color: rgba(245, 245, 100, 1);
+}
+
+#pw-change-failed {
+    margin: 4px;
+    color: rgb(160,0,0);
+    opacity: 0;
+    text-align: center;
+}
+
+#pw-change-success {
+    margin: 4px;
+    color: rgb(0,160,0);
+    opacity: 1;
+    text-align: center;
+}
